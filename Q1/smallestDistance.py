@@ -7,13 +7,13 @@
 
 
 import heapq, numpy
-
+from collections import Counter
 
 
 ## Import data from txt file
 def main():
-    filePath = "./Q1/SteInput.txt"
-
+    filePath = "./Q1/input.txt"
+    left,right = [],[]
     leftH,rightH = [],[]
     ## Create Heaps
     heapq.heapify(leftH)
@@ -22,6 +22,8 @@ def main():
     with open(filePath, 'r') as file:
         for line in file:
             num1,num2 = map(int,line.split())
+            left.append(num1)
+            right.append(num2)
             heapq.heappush(leftH,num1)
             heapq.heappush(rightH,num2)
 
@@ -33,5 +35,16 @@ def main():
         minSum += currSum
     ## Return
     print(minSum)
+    ### End of Part 1
+
+
+    C1,C2 = Counter(left),Counter(right)
+    totalSum = 0
+    for i in C1:
+        curr = i * C1[i] * C2[i]
+        totalSum += curr
+        
+    print(totalSum)
 
 main()
+
