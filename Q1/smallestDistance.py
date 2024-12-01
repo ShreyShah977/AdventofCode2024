@@ -41,7 +41,10 @@ def main():
     C1,C2 = Counter(left),Counter(right)
     totalSum = 0
     for i in C1:
-        curr = i * C1[i] * C2[i]
+        number = i
+        frequencyOfNumberonLeft = C1[i]
+        frequencyOfNumberonRight = C2[i]
+        curr = number * frequencyOfNumberonLeft * frequencyOfNumberonRight
         totalSum += curr
         
     print(totalSum)
