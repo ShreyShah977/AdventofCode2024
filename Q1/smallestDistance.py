@@ -37,7 +37,7 @@ def main():
     print(minSum)
     ### End of Part 1
 
-
+    ## Part 2
     C1,C2 = Counter(left),Counter(right)
     totalSum = 0
     for i in C1:
