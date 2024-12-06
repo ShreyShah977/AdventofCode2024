@@ -7,6 +7,7 @@ a = [0, 0]
 for p in pages.split():
     p = p.split(',')
     s = sorted(p, key=cmp)
+    print(s)
     a[p!=s] += int(s[len(s)//2])
 
-print(*a)
+print(a)
